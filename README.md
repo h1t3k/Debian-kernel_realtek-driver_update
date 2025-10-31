@@ -1,5 +1,5 @@
-# kali-kernel-source&realtek-update
-kernel header update instructions for custom-kernel / wifi driver install
+# kali kernel source & realtek wifi driver update
+instructions to update the kernel header for a custom kali linux kernel + realtek wifi driver install (requires kernel update)
 
     kali-tweaks
 select 'network settings'
