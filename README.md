@@ -21,9 +21,7 @@ For nineplus AC1200 wireless card (capable of packet injection)
 
     sudo ./install-driver.sh
 
-Allow the installer to reboot your system.
-
-Later, execute the following to update the driver when needed:
+Allow the installer to reboot your system. Afterwards, execute the following to update the driver when needed:
 
 
     sudo sh install-driver.sh
