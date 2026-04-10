@@ -1,41 +1,29 @@
 # kali kernel source & realtek wifi driver update
 instructions to update the kernel header for a custom kali linux kernel + realtek wifi driver install (requires kernel update)
 
-    kali-tweaks
-select 'network settings'
 
-select repositories and check:
+    sudo apt -y update && sudo apt -y upgrade
 
-'install packages by https'
-'bleeding-edge'
-'expiremental'
-
-select 'Apply'
-
-than enter
-
-    sudo apt update && sudo apt upgrade && sudo apt install linux-image-amd64 -y
-
-    sudo reboot now
-
-    sudo apt install build-essential libelf-dev linux-headers-$(uname -r) -y
+    sudo apt install -y linux-headers-$(uname -r) build-essential bc dkms git libelf-dev rfkill iw
 
     sudo reboot now
 
 For nineplus AC1200 wireless card (capable of packet injection)
 
 
-    sudo su
-    lsusb
-    apt -y install git
-    apt -y install dkms
-    mkdir /apps
-    cd /apps/
+    mkdir -p ~/src
 
---copy all the lines down to (and including) the command '..'-- 
+    cd ~/src
 
-    git clone "https://github.com/RinCat/RTL88x2BU-Linux-Driver.git" /usr/src/rtl88x2bu-git
-    sed -i 's/PACKAGE_VERSION="@PKGVER@"/PACKAGE_VERSION="git"/g' /usr/src/rtl88x2bu-git/dkms.conf
-    dkms add -m rtl88x2bu -v git
-    dkms autoinstall
-    ..
+    git clone https://github.com/morrownr/88x2bu-20210702.git
+
+    cd ~/src/88x2bu-20210702
+
+    sudo ./install-driver.sh
+
+Allow the installer to reboot your system.
+
+Later, execute the following to update the driver when needed:
+
+
+    sudo sh install-driver.sh
