@@ -1,4 +1,4 @@
-# Debian/Kali kernel source & realtek wifi driver update
+# Debian (and Debian based systems) kernel source & realtek wifi driver update
 instructions to update the kernel header for a custom kali linux kernel + realtek wifi driver install (requires kernel update)
 
 
